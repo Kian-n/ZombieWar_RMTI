@@ -12,3 +12,4 @@ The survivor had three classes - Child.java, Teacher.java, and Soldier.java
 
 # Program Logic
 The program generates survivors and zombies. Make each survivor attack every zombie, and have a zombie attack every survivor. Repeats until all zombies are dead or all survivors are dead. Once this is done, it prints the number of survivors who made it to safety.
+ddhjsds
