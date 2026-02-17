@@ -11,4 +11,8 @@ For the Zombies, we had two classes - CommonInfected.java and Tank.java
 The survivor had three classes - Child.java, Teacher.java, and Soldier.java
 
 # Program Logic
+<<<<<<< HEAD
 The program generates survivors and zombies. Make each survivor attack every zombie, and have a zombie attack every survivor. Repeats until all zombies are dead or all survivors are dead. Once this is done, it prints the number of survivors who made it to safety.
+=======
+The program generates survivors and zombies. Make each survivor attack every zombie, and have a zombie attack every survivor. Repeats until all zombies are dead or all survivors are dead. Once this is done, it prints the number of survivors who made it to safety.
+>>>>>>> 3892d5be17617d920317af73b147adeccae59c94
