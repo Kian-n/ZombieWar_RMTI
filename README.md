@@ -1,2 +1,2 @@
-# ZombieWar_RMTI
-Zombie War Group Project - Rachel, Taite, Moua and Ibrahim. CSC 422
+# Zombie War Group Project CSC 422
+# Group Assignment by: Rachel, Taite, Moua, and Ibrahim. 
