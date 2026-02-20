@@ -1,7 +1,6 @@
 public class Teacher extends Survivor {
 
     public Teacher() {
-        health = 50;
-        attackPower = 5;
+        super(50, 5); // able to inherit from Survivor
     }
 }
