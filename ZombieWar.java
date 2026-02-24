@@ -88,7 +88,7 @@ public class ZombieWar {
         System.out.println("Zombie War 1.0 sample results:");
 
         //Run one round of combat
-        runBattle1(survivors, zombies);
+        runBattle(survivors, zombies);
 
         //Report of the survivors
         printReport1(survivors, zombies);
