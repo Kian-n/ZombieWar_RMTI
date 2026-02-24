@@ -17,6 +17,12 @@ public class Character {
 
     // reduce health by given amount
     public void takeDamage(int damage) {
+        if (damage < 0) return;   // ignore invalid damage
+
         health -= damage;
+
+        if (health < 0) {
+        health = 0;           // prevent negative health
+        }
     }
 }

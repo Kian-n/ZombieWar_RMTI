@@ -11,6 +11,5 @@ public class Survivor extends Character {
     public Survivor(int health, int attackPower) {
         this.health = health;
         this.attackPower = attackPower;
-
     }
 }

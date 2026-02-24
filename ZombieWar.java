@@ -97,7 +97,7 @@ public class ZombieWar {
     // Simple battle method
     //The function performs one round of combat
     //Each character hets to attack until they either die or win
-    public static void runBattle1(Survivor[] survivors, Zombie[] zombies) {
+    public static void runBattle(Survivor[] survivors, Zombie[] zombies) {
 
         // Survivors attack all zombies
         for (Survivor survivor : survivors) {
