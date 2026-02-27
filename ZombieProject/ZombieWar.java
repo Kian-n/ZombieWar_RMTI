@@ -7,10 +7,10 @@
  
  */
 
-import survivors.*;
-import zombies.*;
 import characters.Character;
 import java.util.Random;
+import survivors.*;
+import zombies.*;
 
 public class ZombieWar {
 
