@@ -1,3 +1,5 @@
+package zombies;
+
 public class CommonInfected extends Zombie {
 
     //Setting Up Attack and Health

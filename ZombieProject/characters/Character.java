@@ -1,3 +1,5 @@
+package characters;
+
 public class Character {
 
     public int health;

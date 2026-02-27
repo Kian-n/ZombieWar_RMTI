@@ -1,3 +1,5 @@
+package survivors;
+
 public class Teacher extends Survivor {
 
     public Teacher() {

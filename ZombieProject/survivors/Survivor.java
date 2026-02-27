@@ -5,6 +5,10 @@
 * Parent class of Child, Teacher, Soldier
 */
 
+package survivors;
+
+import characters.Character;
+
 public class Survivor extends Character {
 
     //initializing variables
