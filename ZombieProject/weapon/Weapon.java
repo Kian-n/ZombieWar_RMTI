@@ -8,8 +8,6 @@
 * i.e. Shotgun AccuracyLevel=75% ... if a roll is 42 <= 75 -> true -> HIT
 */
 
-package weapon;
-
 import java.util.Random;
 
 public class Weapon {

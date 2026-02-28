@@ -1,5 +1,3 @@
-package weapon;
-
 public class FryingPan extends Weapon{
     //DL5, AL100%
     public FryingPan(){
