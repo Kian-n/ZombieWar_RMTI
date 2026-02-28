@@ -1,3 +1,5 @@
+package weapon;
+
 public class Axe extends Weapon{
     //DL25,AL85%
     public Axe(){

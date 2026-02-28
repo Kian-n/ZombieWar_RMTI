@@ -1,3 +1,5 @@
+package weapon;
+
 public class SubmachineGun extends Weapon {
     //DL75,AL45%
     public SubmachineGun(){
