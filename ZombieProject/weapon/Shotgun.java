@@ -1,5 +1,3 @@
-package weapon;
-
 public class Shotgun extends Weapon{
     //DL55, AL75%
     public Shotgun(){
