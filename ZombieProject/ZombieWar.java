@@ -16,6 +16,12 @@ import zombies.*;
 public class ZombieWar {
 
     public static void main(String[] args) {
+
+        // ===== Added Welcome Banner =====
+        System.out.println("\n**********************************");
+        System.out.println("   !!WARNING!! ZOMBIE OUTBREAK");
+        System.out.println("**********************************\n");
+
         System.out.println("Running Release 1.0");
         release1();
 
@@ -27,6 +33,7 @@ public class ZombieWar {
         System.out.println("Running Release 3.0");
         run3();
     }
+
     public static void release1() {
 
         //Number of zombies and survivors in the simulation
@@ -149,6 +156,7 @@ public class ZombieWar {
         System.out.println("It seems " + survivorsAlive +
                 " have made it to safety.");
     }
+
     // Release 2
     public static void run2() {
 
@@ -260,7 +268,6 @@ public class ZombieWar {
         }
     }
 
-
     private static boolean anyAlive(Character[] arr) {
         for (Character c : arr) {
             if (c != null && c.isAlive()) return true;
@@ -302,7 +309,7 @@ public class ZombieWar {
             survivorNames[i] = "Soldier" + i;
         }
 
-            // Create survivors with random types
+        // Create survivors with random types
         for (int i = 0; i < survivors.length; i++) {
 
             int typeChoice = rand.nextInt(3); // 0 = Child, 1 = Teacher, 2 = Soldier
@@ -344,51 +351,62 @@ public class ZombieWar {
 
         System.out.println("\nZombie War 3.0 sample results:");
         runBattle3(survivors, zombies, survivorNames, zombieNames, rand);
+
+        // ===== Added Battle Summary =====
+        System.out.println("\n**********************************");
+        System.out.println("         BATTLE SUMMARY");
+        System.out.println("**********************************");
+
+        System.out.println("Survivors remaining: " + countAlive(survivors));
+        System.out.println("Zombies remaining: " + countAlive(zombies));
+
+        System.out.println("\n===== Simulation Complete =====");
     }
+
     public static void runBattle3(Survivor[] survivors, Zombie[] zombies,
                               String[] survivorNames, String[] zombieNames,
                               Random rand) {
 
-    while (anyAlive(survivors) && anyAlive(zombies)) {
+        while (anyAlive(survivors) && anyAlive(zombies)) {
 
-        // Survivors attack using weapons
-        for (int i = 0; i < survivors.length; i++) {
-            if (survivors[i] == null || !survivors[i].isAlive()) continue;
+            // Survivors attack using weapons
+            for (int i = 0; i < survivors.length; i++) {
+                if (survivors[i] == null || !survivors[i].isAlive()) continue;
 
+                for (int z = 0; z < zombies.length; z++) {
+                    if (zombies[z] == null || !zombies[z].isAlive()) continue;
+
+                    boolean wasAlive = zombies[z].isAlive();
+
+                    survivors[i].attack(zombies[z], rand);
+
+                    if (wasAlive && !zombies[z].isAlive()) {
+                        System.out.println("   " + survivorNames[i] +
+                                " killed " + zombieNames[z] +
+                                " using " + survivors[i].getWeaponName());
+                    }
+                }
+            }
+
+            if (!anyAlive(zombies)) break;
+
+            // Zombies attack normally
             for (int z = 0; z < zombies.length; z++) {
                 if (zombies[z] == null || !zombies[z].isAlive()) continue;
 
-                boolean wasAlive = zombies[z].isAlive();
+                for (int s = 0; s < survivors.length; s++) {
+                    if (survivors[s] == null || !survivors[s].isAlive()) continue;
 
-                survivors[i].attack(zombies[z], rand);
+                    boolean wasAlive = survivors[s].isAlive();
 
-                if (wasAlive && !zombies[z].isAlive()) {
-                    System.out.println("   " + survivorNames[i] +
-                            " killed " + zombieNames[z] +
-                            " using " + survivors[i].getWeaponName());
-                }
-            }
-        }
+                    zombies[z].dealDamage(survivors[s]);
 
-        if (!anyAlive(zombies)) break;
-
-        // Zombies attack normally
-        for (int z = 0; z < zombies.length; z++) {
-            if (zombies[z] == null || !zombies[z].isAlive()) continue;
-
-            for (int s = 0; s < survivors.length; s++) {
-                if (survivors[s] == null || !survivors[s].isAlive()) continue;
-
-                boolean wasAlive = survivors[s].isAlive();
-
-                zombies[z].dealDamage(survivors[s]);
-
-                if (wasAlive && !survivors[s].isAlive()) {
-                    System.out.println("   " + zombieNames[z] +
-                            " killed " + survivorNames[s]);
+                    if (wasAlive && !survivors[s].isAlive()) {
+                        System.out.println("   " + zombieNames[z] +
+                                " killed " + survivorNames[s]);
+                    }
                 }
             }
         }
     }
-}
 }
